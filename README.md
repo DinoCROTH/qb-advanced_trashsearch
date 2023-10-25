@@ -30,13 +30,6 @@ https://i.imgur.com/xkQXGKe.jpeg
 
 <hr>
 
-**Money reward**
-
-https://i.imgur.com/Bd8g0fC.png
-
-
-<hr>
-
 **Cooldown**
 
 https://i.imgur.com/uMEJ4mi.png
