@@ -94,18 +94,21 @@ RegisterNetEvent('qb-trashsearch:server:searchedTrash', function(binId)
         return
     end
 
-    if rollPrecentage(Config.Reward.Money.Chance) then
-        local amount = math.random(Config.Reward.Money.Min, Config.Reward.Money.Max)
-        TriggerClientEvent('QBCore:Notify', src, Lang:t("reward.money", { amount = amount }), "success")
-        player.Functions.AddMoney("cash", amount)
-        return
-    end
-
     local items = {}
 
     for i = 1, math.random(Config.Reward.MinNumberOfItems, Config.Reward.MaxNumberOfItems) do
-        local item = Config.Reward.ItemList[math.random(1, #Config.Reward.ItemList)]
-        items[#items + 1] = item
+        local rewardRoll = math.random(1, 100)
+
+        if rewardRoll <= Config.Reward.NormalItems.Chance then
+            local item = Config.Reward.NormalItems.ItemList[math.random(1, #Config.Reward.NormalItems.ItemList)]
+            items[#items + 1] = item
+        elseif rewardRoll <= Config.Reward.NormalItems.Chance + Config.Reward.RareItems.Chance then
+            local item = Config.Reward.RareItems.ItemList[math.random(1, #Config.Reward.RareItems.ItemList)]
+            items[#items + 1] = item
+        else 
+            local item = Config.Reward.VeryRareItems.ItemList[math.random(1, #Config.Reward.VeryRareItems.ItemList)]
+            items[#items + 1] = item
+        end
     end
 
     for k, v in pairs(items) do
