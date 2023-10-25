@@ -1,4 +1,5 @@
-# qb-trashsearch
+# qb-advanced_trashsearch fork by DinoCROTH
+
 
 **Experience what it's like to search trough trash like a homeless person!**<br>
 **Find unique items and gain stress overtime!**
